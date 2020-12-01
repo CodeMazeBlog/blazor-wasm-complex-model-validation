@@ -1,0 +1,42 @@
+﻿@page "/"
+
+<EditForm Model="_product" OnValidSubmit="Submit" style="width:600px;">
+	<ObjectGraphDataAnnotationsValidator />
+	<div class="form-group row">
+		<label for="name" class="col-md-2 col-form-label">Name:</label>
+		<div class="col-md-10">
+			<InputText id="name" class="form-control" @bind-Value="_product.Name" />
+			<ValidationMessage For="@(() => _product.Name)" />
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<label for="supplier" class="col-md-2 col-form-label">Supplier:</label>
+		<div class="col-md-10">
+			<InputText id="supplier" class="form-control" @bind-Value="_product.Supplier" />
+			<ValidationMessage For="@(() => _product.Supplier)" />
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<label for="confirm" class="col-md-2 col-form-label">Confirm:</label>
+		<div class="col-md-10">
+			<InputText id="confirm" class="form-control" @bind-Value="_product.ConfirmSupplier" />
+			<ValidationMessage For="@(() => _product.ConfirmSupplier)" />
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<label for="description" class="col-md-2 col-form-label">Description:</label>
+		<div class="col-md-10">
+			<InputText id="description" class="form-control" @bind-Value="_product.ProductDetails.Description" />
+			<ValidationMessage For="@(() => _product.ProductDetails.Description)" />
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12 text-right">
+			<button type="submit" class="btn btn-success">Submit</button>
+		</div>
+	</div>
+</EditForm>
